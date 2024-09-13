@@ -35,7 +35,6 @@ form {
     transition: all 0.3s ease;
   }
   
-  /* Remove focus outline and green transition for p-calendar */
   .p-calendar input:focus {
     outline: none;
     box-shadow: none;
@@ -69,22 +68,22 @@ form {
     cursor: pointer;
   }
 
-  /* Make the popup calendar smaller */
+  
 .p-datepicker {
-    font-size: 0.85rem; /* Adjust the size as needed */
-    max-width: 250px; /* Control the width of the calendar */
+    font-size: 0.85rem; 
+    max-width: 250px; 
 }
 
 .p-datepicker-calendar td, .p-datepicker-calendar th {
-    padding: 0.5rem; /* Adjust padding to make the cells smaller */
+    padding: 0.5rem; 
 }
 
 .p-datepicker .p-inputtext {
-    font-size: 0.85rem; /* Reduce the input text size */
+    font-size: 0.85rem; 
 }
 
 .p-datepicker-header {
-    padding: 0.5rem; /* Adjust header padding */
+    padding: 0.5rem; 
 }
 
 .p-datepicker-monthpicker {
@@ -92,11 +91,14 @@ form {
     height: auto;
 }
 
-/* Adjust calendar buttons size */
 .p-datepicker-footer .p-button {
     padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
 }
 
-  
-  
+.top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+}

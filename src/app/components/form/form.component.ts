@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 import { InputMaskModule } from 'primeng/inputmask';
-import { Router } from '@angular/router'; // Import Router
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -15,7 +15,7 @@ import { Router } from '@angular/router'; // Import Router
 export class FormComponent {
   employeeForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) { // Inject Router
+  constructor(private fb: FormBuilder, private router: Router) { 
     this.employeeForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -50,5 +50,10 @@ export class FormComponent {
     } else {
       alert('Please fill in all required fields.');
     }
+  }
+
+  // Navigate to Employee Details page with button
+  navigateToEmployeeDetails() {
+    this.router.navigate(['/empdetails']);
   }
 }
