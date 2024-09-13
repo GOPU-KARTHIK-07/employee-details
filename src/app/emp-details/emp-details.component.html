@@ -31,4 +31,9 @@
   No employee data available.
 </div>
 
-
+<!-- Pagination Controls -->
+<div *ngIf="totalPages() > 1" class="pagination-controls">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }} of {{ totalPages() }}</span>
+  <button (click)="nextPage()" [disabled]="currentPage === totalPages()">Next</button>
+</div>
