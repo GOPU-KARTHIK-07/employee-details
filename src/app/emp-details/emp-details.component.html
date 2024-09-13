@@ -1,0 +1,28 @@
+
+<h2>Employee Details</h2>
+<table *ngIf="employees.length > 0" class="employee-table">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Date of Birth</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.firstName }}</td>
+      <td>{{ employee.lastName }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.phoneNumber }}</td>
+      <td>{{ employee.dob }}</td>
+      <td>{{ employee.address }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="employees.length === 0" class="no-data">
+  No employee data available.
+</div>

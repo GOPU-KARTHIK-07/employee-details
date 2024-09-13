@@ -1,0 +1,102 @@
+/* Overall Form Styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Input Fields Styling including p-calendar */
+  .p-field {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000000;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    
+  }
+  
+  input[pInputText], textarea[pInputTextarea], p-calendar {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #000000;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  /* Remove focus outline and green transition for p-calendar */
+  .p-calendar input:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Hover and Focus Effects */
+  .p-calendar input:hover {
+    border-color: #bbc6c7;
+  }
+  
+  button[pButton] {
+    width: 100%;
+    background: linear-gradient(135deg, #00ADB5, #008080);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+  }
+  h2{
+    text-align: center;
+  }
+  
+  button[pButton]:hover {
+    background: linear-gradient(135deg, #008080, #00ADB5);
+    box-shadow: 0 8px 15px rgba(0, 173, 181, 0.2);
+    cursor: pointer;
+  }
+
+  /* Make the popup calendar smaller */
+.p-datepicker {
+    font-size: 0.85rem; /* Adjust the size as needed */
+    max-width: 250px; /* Control the width of the calendar */
+}
+
+.p-datepicker-calendar td, .p-datepicker-calendar th {
+    padding: 0.5rem; /* Adjust padding to make the cells smaller */
+}
+
+.p-datepicker .p-inputtext {
+    font-size: 0.85rem; /* Reduce the input text size */
+}
+
+.p-datepicker-header {
+    padding: 0.5rem; /* Adjust header padding */
+}
+
+.p-datepicker-monthpicker {
+    width: auto;
+    height: auto;
+}
+
+/* Adjust calendar buttons size */
+.p-datepicker-footer .p-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+  
+  

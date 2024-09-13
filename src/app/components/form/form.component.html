@@ -1,0 +1,69 @@
+<h2>Employee Registration Form</h2>
+
+<form [formGroup]="employeeForm" (ngSubmit)="saveEmployee()">
+  <div class="p-fluid">
+    
+    <!-- First Name -->
+    <div class="p-field">
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text" pInputText formControlName="firstName" />
+      <div *ngIf="employeeForm.get('firstName')?.invalid && employeeForm.get('firstName')?.touched" class="p-error">
+        First name is required.
+      </div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="p-field">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text" pInputText formControlName="lastName" />
+      <div *ngIf="employeeForm.get('lastName')?.invalid && employeeForm.get('lastName')?.touched" class="p-error">
+        Last name is required.
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="p-field">
+      <label for="email">Email</label>
+      <input id="email" type="email" pInputText formControlName="email" />
+      <div *ngIf="employeeForm.get('email')?.invalid && employeeForm.get('email')?.touched" class="p-error">
+        Please enter a valid email.
+      </div>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="p-field">
+      <label for="phoneNumber">Phone Number</label>
+      <input id="phoneNumber" type="text" pInputText formControlName="phoneNumber" />
+      <div *ngIf="employeeForm.get('phoneNumber')?.invalid && employeeForm.get('phoneNumber')?.touched" class="p-error">
+        Please enter a valid 10-digit phone number.
+      </div>
+    </div>
+  
+   
+      
+
+    <!-- Date of Birth -->
+    <div class="p-field">
+      <label for="dob">Date of Birth</label>
+      <p-calendar formControlName="dob"></p-calendar>
+      <div *ngIf="employeeForm.get('dob')?.invalid && employeeForm.get('dob')?.touched" class="p-error">
+        Date of birth is required.
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="p-field">
+      <label for="address">Address</label>
+      <textarea id="address" pInputTextarea formControlName="address"></textarea>
+      <div *ngIf="employeeForm.get('address')?.invalid && employeeForm.get('address')?.touched" class="p-error">
+        Address is required.
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="p-field">
+      <button pButton type="submit" label="Save" [disabled]="employeeForm.invalid"></button>
+    </div>
+
+  </div>
+</form>
