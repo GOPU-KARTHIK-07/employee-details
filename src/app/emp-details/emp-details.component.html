@@ -1,28 +1,34 @@
-
 <h2>Employee Details</h2>
-<table *ngIf="employees.length > 0" class="employee-table">
+
+<!-- Filter -->
+<div class="filter-container">
+  <input type="text" [(ngModel)]="filterTerm" (ngModelChange)="filterEmployees()" placeholder="Search employees..." />
+</div>
+
+<!-- Table -->
+<table *ngIf="paginatedEmployees().length > 0" class="employee-table">
   <thead>
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Phone Number</th>
-      <th>Date of Birth</th>
-      <th>Address</th>
+      <th (click)="sortBy('firstName')">First Name</th>
+      <th (click)="sortBy('lastName')">Last Name</th>
+      <th (click)="sortBy('email')">Email</th>
+      <th (click)="sortBy('phoneNumber')">Phone Number</th>
+      <th (click)="sortBy('dob')">Date of Birth</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of employees">
+    <tr *ngFor="let employee of paginatedEmployees()">
       <td>{{ employee.firstName }}</td>
       <td>{{ employee.lastName }}</td>
       <td>{{ employee.email }}</td>
       <td>{{ employee.phoneNumber }}</td>
-      <td>{{ employee.dob }}</td>
-      <td>{{ employee.address }}</td>
+      <td>{{ employee.dob | date: 'yyyy-MM-dd' }}</td>
     </tr>
   </tbody>
 </table>
 
-<div *ngIf="employees.length === 0" class="no-data">
+<div *ngIf="paginatedEmployees().length === 0" class="no-data">
   No employee data available.
 </div>
+
+
