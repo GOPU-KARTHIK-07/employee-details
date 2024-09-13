@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-emp-details',
@@ -22,16 +24,27 @@ export class EmpDetailsComponent implements OnInit {
   sortColumn: string = '';
   sortAsc: boolean = true;
 
+  // Filter debounce
+  private filterSubject: Subject<string> = new Subject<string>();
+
   ngOnInit() {
     // Fetch the employee data from localStorage
     const storedEmployees = localStorage.getItem('employees');
     this.employees = storedEmployees ? JSON.parse(storedEmployees) : [];
-
-    // Initialize the filtered employees list
     this.filteredEmployees = [...this.employees];
+
+    // Subscribe to filter input changes
+    this.filterSubject.pipe(debounceTime(3000)).subscribe(term => {
+      this.filterTerm = term;
+      this.filterEmployees();
+    });
   }
 
   // Filter employees by search term
+  onFilterChange(term: string) {
+    this.filterSubject.next(term);
+  }
+
   filterEmployees() {
     this.filteredEmployees = this.employees.filter(employee => 
       employee.firstName.toLowerCase().includes(this.filterTerm.toLowerCase()) ||

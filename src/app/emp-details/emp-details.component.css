@@ -5,27 +5,57 @@
 
 .employee-table th, .employee-table td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 12px;
   text-align: left;
 }
 
 .employee-table th {
+  background-color: #f4f4f4;
   cursor: pointer;
-  background-color: #f2f2f2;
+}
+
+.employee-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.employee-table tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+.employee-table th {
+  font-weight: bold;
 }
 
 .pagination-controls {
-  margin-top: 10px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .pagination-controls button {
-  padding: 5px 10px;
+  padding: 8px 15px;
   margin: 0 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .filter-container {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.filter-container input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: 100%;
+  max-width: 300px;
 }
